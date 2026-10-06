@@ -1,1 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+<title>For Shryss ❤️</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:
+  linear-gradient(135deg,#ff416c,#ff4b8b,#ff9a9e);
+  color:white;
+}
+
+/* MUSIC */
+
+.music{
+  position:fixed;
+  top:15px;
+  right:15px;
+  z-index:1000;
+}
+
+.music button{
+  border:0;
+  border-radius:25px;
+  padding:10px 15px;
+  background:white;
+  color:#e73562;
+  font-weight:bold;
+}
+
+/* SLIDER */
+
+.slider{
+  width:100%;
+  height:100vh;
+  display:flex;
+  transition:transform .55s ease;
+  touch-action:pan-y;
+}
+
+.page{
+  min-width:100%;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px;
+}
+
+.card{
+  width:100%;
+  max-width:520px;
+  max-height:90vh;
+  overflow-y:auto;
+  padding:35px 22px;
+  text-align:center;
+  border-radius:30px;
+  background:rgba(255,255,255,.16);
+  backdrop-filter:blur(15px);
+  box-shadow:0 15px 45px rgba(0,0,0,.25);
+}
+
+h1{
+  font-size:38px;
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:27px;
+  margin-bottom:18px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+button{
+  border:0;
+  border-radius:30px;
+  padding:14px 23px;
+  margin:7px;
+  background:white;
+  color:#e73562;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:hover{
+  transform:scale(1.06);
+}
+
+.big-heart{
+  font-size:85px;
+  animation:pulse 1.3s infinite;
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.15);
+  }
+}
+
+.option{
+  display:block;
+  width:100%;
+}
+
+.result{
+  min-height:30px;
+  margin:15px 0;
+  font-weight:bold;
+}
+
+.progress{
+  font-size:14px;
+  opacity:.9;
+  margin-bottom:20px;
+}
+
+.love{
+  font-size:45px;
+  margin:20px 0;
+}
+
+.final-heart{
+  font-size:100px;
+  animation:pulse 1.2s infinite;
+}
+
+/* NAVIGATION */
+
+.nav{
+  margin-top:15px;
+}
+
+.swipe-text{
+  font-size:13px;
+  opacity:.75;
+  margin-top:15px;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+  position:fixed;
+  bottom:-30px;
+  pointer-events:none;
+  z-index:5;
+  animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+
+  0%{
+    transform:translateY(0) rotate(0);
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+
+}
+
+@media(max-width:500px){
+
+  h1{
+    font-size:31px;
+  }
+
+  h2{
+    font-size:24px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .card{
+    padding:28px 18px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- MUSIC BUTTON -->
+
+<div class="music">
+
+<button onclick="toggleMusic()" id="musicButton">
+🎵 Music
+</button>
+
+</div>
+
+
+<audio id="music" loop>
+
+<source
+src="https://cdn.pixabay.com/audio/2022/10/16/audio_6f0b6f3a7e.mp3"
+type="audio/mpeg">
+
+</audio>
+
+
+<!-- ALL PAGES -->
+
+<div class="slider" id="slider">
+
+
+<!-- PAGE 1 -->
+
+<section class="page">
+
+<div class="card">
+
+<div class="big-heart">
+❤️
+</div>
+
+<h1>
+Hey Shryss...
+</h1>
+
+<p>
+I made something special for you.
+</p>
+
+<p>
+But before you enter...
+</p>
+
+<h2>
+Are you ready? 👀💕
+</h2>
+
+<button onclick="nextPage()">
+YES, I'M READY ❤️
+</button>
+
+<p class="swipe-text">
+Swipe left → to continue
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page">
+
+<div class="card">
+
+<div class="big-heart">
+💗
+</div>
+
+<h1>
+Welcome, Shryss
+</h1>
+
+<p>
+There are 8 little games waiting for you.
+</p>
+
+<p>
+Take your time.
+Have fun.
+And don't skip the ending. 👀❤️
+</p>
+
+<button onclick="nextPage()">
+START 🎮
+</button>
+
+<p class="swipe-text">
+Swipe left → to start
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 3 GAME 1 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 1 — Choose One 💕
+</h2>
+
+<div class="progress">
+Game 1 / 8
+</div>
+
+<p>
+What would make me happiest?
+</p>
+
+<button class="option"
+onclick="answer(this,3,true,'Exactly! ❤️')">
+Spending time with you
+</button>
+
+<button class="option"
+onclick="answer(this,3,false,'Nice try 😂')">
+A thousand rupees
+</button>
+
+<button class="option"
+onclick="answer(this,3,false,'Nope 😭')">
+Sleeping all day
+</button>
+
+<div class="result"
+id="result3">
+</div>
+
+<button onclick="nextPage()">
+NEXT ➜
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 4 GAME 2 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 2 — Pick One 😏
+</h2>
+
+<div class="progress">
+Game 2 / 8
+</div>
+
+<p>
+What's more dangerous?
+</p>
+
+<button class="option"
+onclick="answer(this,4,false,'Hmm... think again 👀')">
+My attitude 😌
+</button>
+
+<button class="option"
+onclick="answer(this,4,true,'That smile definitely wins ❤️')">
+Your smile ❤️
+</button>
+
+<button class="option"
+onclick="answer(this,4,false,'Not quite 😂')">
+Our arguments
+</button>
+
+<div class="result"
+id="result4">
+</div>
+
+<button onclick="nextPage()">
+NEXT ➜
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 5 GAME 3 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 3 — Love Meter ❤️
+</h2>
+
+<div class="progress">
+Game 3 / 8
+</div>
+
+<p>
+How much do you think I love you?
+</p>
+
+<div class="love">
+❤️❤️❤️❤️❤️
+</div>
+
+<button
+onclick="answer(this,5,true,'There is actually no limit. ❤️')">
+More than you imagine
+</button>
+
+<button
+onclick="answer(this,5,true,'Infinity still isn't enough. 😭❤️')">
+Infinity
+</button>
+
+<div class="result"
+id="result5">
+</div>
+
+<button onclick="nextPage()">
+NEXT ➜
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 6 GAME 4 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 4 — Complete It 💗
+</h2>
+
+<div class="progress">
+Game 4 / 8
+</div>
+
+<p>
+"You are my favourite..."
+</p>
+
+<button class="option"
+onclick="answer(this,6,false,'Almost 😂')">
+Person
+</button>
+
+<button class="option"
+onclick="answer(this,6,true,'Correct ❤️')">
+Everything
+</button>
+
+<button class="option"
+onclick="answer(this,6,false,'Nooo 😭')">
+Problem
+</button>
+
+<div class="result"
+id="result6">
+</div>
+
+<button onclick="nextPage()">
+NEXT ➜
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 7 GAME 5 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 5 — Memory Test 🥹
+</h2>
+
+<div class="progress">
+Game 5 / 8
+</div>
+
+<p>
+What matters most in a relationship?
+</p>
+
+<button class="option"
+onclick="answer(this,7,true,'YES. Understanding matters. ❤️')">
+Understanding each other
+</button>
+
+<button class="option"
+onclick="answer(this,7,false,'Money can't buy this 😂')">
+Money
+</button>
+
+<button class="option"
+onclick="answer(this,7,false,'Nope 😭')">
+Winning every argument
+</button>
+
+<div class="result"
+id="result7">
+</div>
+
+<button onclick="nextPage()">
+NEXT ➜
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 8 GAME 6 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 6 — This or That 💕
+</h2>
+
+<div class="progress">
+Game 6 / 8
+</div>
+
+<p>
+Pick your perfect moment.
+</p>
+
+<button class="option"
+onclick="answer(this,8,true,'That sounds perfect. ❤️')">
+A long late-night conversation
+</button>
+
+<button class="option"
+onclick="answer(this,8,true,'Cute date? Absolutely. 🥹')">
+A cute date together
+</button>
+
+<button class="option"
+onclick="answer(this,8,true,'Honestly... both. 😂❤️')">
+Both
+</button>
+
+<div class="result"
+id="result8">
+</div>
+
+<button onclick="nextPage()">
+NEXT ➜
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 9 GAME 7 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 7 — One Last Question 👀
+</h2>
+
+<div class="progress">
+Game 7 / 8
+</div>
+
+<p>
+If I asked you to stay...
+would you? ❤️
+</p>
+
+<button class="option"
+onclick="answer(this,9,true,'I really hoped you would say that. 🥹❤️')">
+Yes
+</button>
+
+<button class="option"
+onclick="answer(this,9,true,'Obviously. ❤️')">
+Obviously
+</button>
+
+<button class="option"
+onclick="answer(this,9,true,'I am counting that as a yes. 😂❤️')">
+Maybe
+</button>
+
+<div class="result"
+id="result9">
+</div>
+
+<button onclick="nextPage()">
+NEXT ➜
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 10 GAME 8 -->
+
+<section class="page">
+
+<div class="card">
+
+<h2>
+Game 8 — Final Challenge ❤️
+</h2>
+
+<div class="progress">
+Game 8 / 8
+</div>
+
+<p>
+Are you ready for what is waiting
+at the end?
+</p>
+
+<button onclick="nextPage()">
+YES ❤️
+</button>
+
+<button onclick="nextPage()">
+I'M READY 👀
+</button>
+
+<p class="swipe-text">
+One last swipe → ❤️
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FINAL PAGE -->
+
+<section class="page">
+
+<div class="card">
+
+<div class="final-heart">
+❤️
+</div>
+
+<h1>
+You made it.
+</h1>
+
+<p>
+And now there is only one thing
+I want you to know...
+</p>
+
+<h2>
+I LOVE YOU, SHRYSS. ❤️
+</h2>
+
+<p>
+Thank you for being you.
+For your smile, your little habits,
+your presence, and all the moments
+that make you special.
+</p>
+
+<p>
+No game could ever properly explain
+how much you mean to me.
+</p>
+
+<p>
+❤️ Always remember that.
+</p>
+
+<button onclick="restart()">
+PLAY AGAIN 🔄
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+let page = 0;
+
+let startX = 0;
+let endX = 0;
+
+const slider =
+document.getElementById("slider");
+
+const music =
+document.getElementById("music");
+
+const musicButton =
+document.getElementById("musicButton");
+
+
+/* MOVE TO NEXT PAGE */
+
+function nextPage(){
+
+  if(page < 11){
+
+    page++;
+
+    slider.style.transform =
+    "translateX(-" + (page * 100) + "%)";
+
+  }
+
+}
+
+
+/* MOVE BACK */
+
+function previousPage(){
+
+  if(page > 0){
+
+    page--;
+
+    slider.style.transform =
+    "translateX(-" + (page * 100) + "%)";
+
+  }
+
+}
+
+
+/* ANSWER */
+
+function answer(button,pageNumber,correct,message){
+
+  const result =
+  document.getElementById(
+    "result"+pageNumber
+  );
+
+  result.innerHTML = message;
+
+}
+
+
+/* MUSIC */
+
+function toggleMusic(){
+
+  if(music.paused){
+
+    music.play();
+
+    musicButton.innerHTML =
+    "🔊 Music";
+
+  }else{
+
+    music.pause();
+
+    musicButton.innerHTML =
+    "🔇 Music";
+
+  }
+
+}
+
+
+/* TRY MUSIC AFTER FIRST TAP */
+
+document.body.addEventListener(
+  "click",
+  function(){
+
+    if(music.paused){
+
+      music.play().catch(function(){});
+
+    }
+
+  },
+  {once:true}
+);
+
+
+/* SWIPE */
+
+document.addEventListener(
+  "touchstart",
+  function(event){
+
+    startX =
+    event.changedTouches[0].screenX;
+
+  },
+  {passive:true}
+);
+
+
+document.addEventListener(
+  "touchend",
+  function(event){
+
+    endX =
+    event.changedTouches[0].screenX;
+
+    handleSwipe();
+
+  },
+  {passive:true}
+);
+
+
+function handleSwipe(){
+
+  const distance =
+  endX - startX;
+
+  if(Math.abs(distance) < 50){
+    return;
+  }
+
+  if(distance < 0){
+
+    nextPage();
+
+  }else{
+
+    previousPage();
+
+  }
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createHeart(){
+
+  const heart =
+  document.createElement("div");
+
+  heart.className="heart";
+
+  heart.innerHTML =
+  Math.random() > .5
+  ? "❤️"
+  : "💕";
+
+  heart.style.left =
+  Math.random()*100 + "%";
+
+  heart.style.fontSize =
+  (18 + Math.random()*22) + "px";
+
+  heart.style.animationDuration =
+  (4 + Math.random()*4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(
+    function(){
+      heart.remove();
+    },
+    8000
+  );
+
+}
+
+setInterval(createHeart,700);
+
+
+/* FINAL HEART BURST */
+
+function finalHearts(){
+
+  for(let i=0;i<35;i++){
+
+    setTimeout(
+      createHeart,
+      i*100
+    );
+
+  }
+
+}
+
+
+/* RESTART */
+
+function restart(){
+
+  page=0;
+
+  slider.style.transform=
+  "translateX(0)";
+
+}
+
+</script>
+
+</body>
+</html>
